@@ -1,5 +1,3 @@
-import React from "react";
-import { useState, useEffect } from "react";
 import React, { useState, useEffect } from "react";
 
 // ─────────────────────────────────────────────
@@ -472,22 +470,19 @@ export default function App() {
   const pages={home:<><Hero/><Products/><Contact/></>,products:<Products/>,custom:<Custom/>,orders:<Orders/>,contact:<Contact/>};
 
   return (
-    <div style={{minHeight:"100vh",background:"#F9F7F4"}}>
-      <Nav/>
-      <main style={S.main}>{pages[page]||pages.home}</main>
+    <div style={{minHeight:"100vh", background:"#F9F7F4"}}>
+      <Nav />
+      <main style={S.main}>
+        {pages[page]}
+      </main>
       <footer style={S.footer}>
-        <div style={{marginBottom:6}}>
-          <strong style={{color:"rgba(255,255,255,.9)",fontFamily:"'Playfair Display',serif",fontSize:16}}>
-            Craft<span style={{color:"#B5906B"}}>ix</span>
-          </strong>
-        </div>
-        <div>Founded by <strong style={{color:"rgba(255,255,255,.75)"}}>Sanjeev Karthikeya.A</strong></div>
-        <div style={{marginTop:4}}>3D Printing Studio · Max 5 × 5 inches · entrepreneurask369@gmail.com</div>
+        <div>Founded by <strong>Sanjeev Karthikeya.A</strong></div>
+        <div>3D Printing Studio · Max 5 × 5 inches · entrepreneurask369@gmail.com</div>
       </footer>
-      {modal==="login"&&<LoginModal/>}
-      {modal==="order"&&<OrderModal/>}
-      {modal==="admin"&&<AdminModal/>}
-      {toast&&<div style={S.toast}>{toast}</div>}
+      {modal==="login" && <LoginModal />}
+      {modal==="order" && <OrderModal />}
+      {modal==="admin" && <AdminModal />}
+      {toast && <div style={S.toast}>{toast}</div>}
     </div>
   );
 }
